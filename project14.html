@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset = "utf-8">
+		<title>Project 14</title>
+		<style>
+			html {margin: 1em; font-family: Helvetica, Arial, sans-serif;}
+			h2 {clear:both;}
+			.box {width: 200px; height: 200px; border:1px solid #000; background-color:#ddd;}
+		</style>
+		<style type="text/css"></style>
+	</head>
+	
+	<body>
+		<header>
+			<h1> Project 14 </h1>
+		</header>
+		<h2>Source and Target</h2>
+		<h3>Source</h3>
+		<input type = "text" id = "text1" placeholder = "Type here">
+		<h3>Target</h3>
+		<input type = "text" id = "text2" readonly="true" placeholder = "Echo the result here">
+		<script>
+			document.getElementById('text1').addEventListener('keyup', function(){
+				var input = document.getElementById('text1');
+				document.getElementById('text2').value = input.value;
+			});
+			
+		</script>
+		
+		
+		<hr>
+		<h2>Image Swap</h2>
+		<img id = "kitten" src = "http://placekitten.com/g/300/200" title = "A Kitten" alt = "A kitten">
+		<br>
+		<input type = "text" id = "get-img" placeholder = "EEnter image url here">
+		<button id="update-img">Update</button>
+		<script>
+			var myButton = document.getElementById('update-img');
+			myButton.addEventListener("click",function(){
+				var kitten = document.getElementById('kitten');
+				var sourceCode = document.getElementById('get-img');
+				kitten.setAttribute('src', sourceCode.value);
+				});	
+		</script>
+		
+		
+		<hr>
+		<h2>Font Sizer</h2>
+		<p id = "to-style">This is my paragraph of stuff.</p>
+		<br>
+		<input tykpe="text" id="font-size" placeholder="Enter a font size">
+		<button id = "font-button">Make it so</button>
+		<script>
+			var paragraph = document.getElementById('to-style');
+			var myButton2 = document.getElementById('font-button')
+			var fontSize = document.getElementById('font-size')
+			myButton2.addEventListener("click", function(){
+			  paragraph.style.fontSize = fontSize.value + "px";
+			});
+		</script>
+		
+		
+		<hr>
+		<h2>Attribute Reporter</h2>
+		<img id = "kitten2" src="http://placekitten.com/g/300/200" title = "A kitten" alt = "A kitten">
+		<br>
+		<button id = "get-attr">Log Attributes</button>
+		<script>
+			var myButton3 = document.getElementById('get-attr');
+			var picInput = document.getElementById('kitten2');
+			myButton3.addEventListener("click", function(){
+				console.log(picInput.getAttribute('src'));
+				console.log(picInput.getAttribute('alt'));
+			});
+		</script>
+		
+		
+		<hr>
+		<h2>element counter</h2>
+		<input type = "text" id = "element-type" placeholder = "Which element?">
+		<br>
+		<button id="count">Count the Elements</button>
+		<input type="text" id = "element-count" placeholder = "Results here" readonly="true">
+		<script>
+			document.getElementById('count').addEventListener("click", function(){
+				var num = document.querySelectorAll(document.getElementById('element-type').value);
+				document.getElementById('element-count').value = num.length;
+			});
+		</script>
+		
+		
+		
+	</body>
+
+</html>

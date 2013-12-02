@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html> 
+<head>
+  <meta charset="utf-8">
+ 
+  <meta name="description" content="Project 13">
+  <title>Project 13</title>
+</head>
+
+<body>
+	<header>
+		<h1>Project 13</h1>
+	</header>
+	
+	<h2>Part 1</h2>
+	<button id="my_button">Alert</button>
+	<script>
+		var myButton = document.getElementById('my_button');
+		myButton.addEventListener("click", function(){
+		alert('Who dare clicks my button!');
+		});
+	</script>
+	
+	<h2>Part 2</h2>
+	
+	<button id="my_button2">Prompt</button>
+	<script>
+		
+		var myButton2 = document.getElementById('my_button2');
+		myButton2.addEventListener("click", function(){
+			var name = prompt("Please enter your name","") ;
+		for (i=0; i< 5; i++) {
+			console.log(name);
+			}
+		});
+	</script>
+
+	<h2>Part 3</h3>
+	<script>
+		var my_array = ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
+		for(i=0; i< my_array.length; i++){
+			document.write(my_array[i]);
+			document.write('<br>');
+		}
+	</script>
+	
+	<h2>Part 4</h4>
+	<div onmouseover="inRect(this)" onmouseout="outRect(this)" id="mouse_events">Mouse Events</div>
+	<style>
+		#mouse_events{
+			height:100px;
+			width:100px;
+			border: 2px solid;
+		}
+	</style>
+	<script>
+		function inRect(x)
+		{
+			console.log('Mouse entered the box');
+		}
+		function outRect(x)
+		{
+			console.log('Mouse left the box');
+		}
+	</script>
+	
+	<h2>Part 5</h2>
+	<input type="text" id="my_input1">First</input> <br>
+	<input type="text" id="my_input2">Second</input> <br>
+	<button id="my_button5">Check</button>
+	<script>
+	var myButton5 = document.getElementById('my_button5');
+		myButton5.addEventListener("click", function(){
+		if (my_input1.value == my_input2.value){
+			alert('Values are equal')
+			}
+		else {
+			alert('Values are not equal')
+			}
+			});
+	</script>
+	
+</body>
+</html>
